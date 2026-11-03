@@ -1,0 +1,14 @@
+{
+  "annotations": 7200.0,
+  "gold_samples": 1080.0,
+  "accuracy": 0.8519,
+  "consensus_match": 0.8604,
+  "avg_handle_time_sec": 43.4508,
+  "throughput_per_hour": 82.8523,
+  "reviewed": 1783.0,
+  "rework_rate": 0.1671,
+  "fleiss_kappa": 0.7099,
+  "krippendorff_alpha": 0.7099,
+  "tasks": 2400.0,
+  "annotators": 24.0
+}

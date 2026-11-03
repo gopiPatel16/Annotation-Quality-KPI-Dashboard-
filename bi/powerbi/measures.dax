@@ -1,0 +1,28 @@
+// Power BI: load outputs/bi_extracts/fact_annotations.csv as 'Annotations'
+// plus annotator_scorecard.csv, weekly_trend.csv, project_agreement.csv.
+// Create a Date table:  Calendar = CALENDAR(MIN(Annotations[created_date]), MAX(Annotations[created_date]))
+
+Total Annotations = COUNTROWS(Annotations)
+Tasks = DISTINCTCOUNT(Annotations[task_id])
+Active Hours = SUM(Annotations[duration_sec]) / 3600
+Throughput per Hour = DIVIDE([Total Annotations], [Active Hours])
+Avg Handle Time (s) = AVERAGE(Annotations[duration_sec])
+
+Gold Samples = CALCULATE(COUNTROWS(Annotations), Annotations[is_gold] = TRUE())
+Accuracy = DIVIDE(CALCULATE(COUNTROWS(Annotations), Annotations[is_correct] = 1), [Gold Samples])
+
+Reviewed = CALCULATE(COUNTROWS(Annotations), NOT(ISBLANK(Annotations[is_rework])))
+Rework Rate = DIVIDE(CALCULATE(COUNTROWS(Annotations), Annotations[is_rework] = 1), [Reviewed])
+
+Accuracy Target = 0.90
+Accuracy vs Target = [Accuracy] - [Accuracy Target]
+Accuracy Status = IF([Accuracy] >= [Accuracy Target], "On target", "Below target")
+
+Accuracy MoM-style (WoW) =
+VAR prev = CALCULATE([Accuracy], DATEADD('Calendar'[Date], -7, DAY))
+RETURN [Accuracy] - prev
+
+// Inter-annotator agreement is pre-computed in Python (project_agreement.csv),
+// since kappa/alpha are not natively expressible in DAX.
+Fleiss Kappa = AVERAGE(project_agreement[fleiss_kappa])
+Krippendorff Alpha = AVERAGE(project_agreement[krippendorff_alpha])

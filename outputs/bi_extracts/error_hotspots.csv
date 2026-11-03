@@ -1,0 +1,9 @@
+project,gold_label,label,errors
+Sentiment,neutral,positive,12
+Sentiment,negative,positive,12
+Sentiment,positive,neutral,10
+Sentiment,negative,neutral,10
+Sentiment,neutral,negative,7
+ImageClass,object,vehicle,7
+Sentiment,positive,negative,6
+ImageClass,person,object,6

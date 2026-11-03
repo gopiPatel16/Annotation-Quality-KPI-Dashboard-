@@ -1,0 +1,12 @@
+area,priority,finding,recommendation
+Process optimisation,High,"13 of 24 annotators are below the 90% accuracy target (lowest: A021, A002, A019, A014, A010, A006).","Enrol them in targeted re-training, route their work to 100% review until accuracy recovers, and pair each with a high-scoring mentor from the same team."
+Data management,High,Project 'ImageClass' agreement is below target (Fleiss kappa 0.65 < 0.7).,Rewrite the labelling guidelines with edge-case examples and run a calibration session.
+Data management,High,Project 'Intent' agreement is below target (Fleiss kappa 0.68 < 0.7).,Rewrite the labelling guidelines with edge-case examples and run a calibration session.
+Data management,High,Project 'Sentiment' agreement is below target (Fleiss kappa 0.58 < 0.7).,Rewrite the labelling guidelines with edge-case examples and run a calibration session.
+Process optimisation,High,Rework rate is 16.7% (target 10%).,Add inline validation and a self-check step before submit; sample-review new joiners earlier.
+Process optimisation,Medium,"Team accuracy spread is 4.0% (Beta best, Gamma worst).",Share Beta's onboarding and QA checklist with Gamma.
+Data management,Medium,Most frequent gold error: 'neutral' labelled as 'positive' in Sentiment (12 cases).,"Add decision rules and counter-examples for this label pair to the guideline, and add more gold items covering it."
+Data management,Medium,Agreement drops from 0.83 (easy) to 0.46 (hard tasks).,Send hard tasks to senior annotators or increase overlap to 5 raters with adjudication.
+Scalability,Medium,"Assuming 80% utilisation today, 10x volume needs ~226 annotators (vs 24 today).","Start a hiring/vendor pipeline now, automate pre-labelling for easy tasks, and reduce overlap on tasks where the first two annotators agree (adaptive overlap)."
+Scalability,Medium,Gold items are ~15% of volume; this is the main accuracy signal.,Keep gold coverage per annotator >= 30 samples/month and refresh the gold set to prevent memorisation.
+Process optimisation,Low,4 slow-but-accurate annotators in the bottom throughput quintile.,Coach on tooling and keyboard shortcuts; do not trade accuracy for speed.

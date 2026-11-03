@@ -1,0 +1,4 @@
+difficulty,gold_samples,error_rate
+easy,600,0.08
+hard,174,0.2874
+medium,306,0.2026

@@ -1,0 +1,5 @@
+volume_multiplier,annotators_needed,annotators_if_rework_at_target,assumptions
+1,23,21,"80% utilisation today, 85% target"
+2,46,42,"80% utilisation today, 85% target"
+5,113,105,"80% utilisation today, 85% target"
+10,226,210,"80% utilisation today, 85% target"

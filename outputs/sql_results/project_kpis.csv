@@ -1,0 +1,4 @@
+project,annotations,tasks,accuracy,rework_rate,throughput_per_hour
+ImageClass,2400,800,0.8534,0.1395,126.1
+Intent,2400,800,0.8519,0.182,57.6
+Sentiment,2400,800,0.8504,0.1797,91.7

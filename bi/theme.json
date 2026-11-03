@@ -1,0 +1,7 @@
+{
+  "name": "Annotation KPI",
+  "dataColors": ["#264653", "#2A9D8F", "#E9C46A", "#F4A261", "#E76F51", "#457B9D"],
+  "background": "#FFFFFF",
+  "foreground": "#1F3A5F",
+  "tableAccent": "#1F3A5F"
+}
